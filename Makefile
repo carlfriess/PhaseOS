@@ -22,5 +22,3 @@ $(BUILD_DIR)/%.o: %.c
 ifneq (,$(findstring c28xx,$(MAKECMDGOALS)))
 include arch/c28xx/Makefile
 endif
-
-.PHONY: kernel
