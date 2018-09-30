@@ -15,6 +15,10 @@ extern void F28x_usDelay(long LoopCount);
 // application specific low level initialization instructions
 int _system_pre_init(void)
 {
+    // Disable Watchdog?
+    
+    // Set up system clock
+    
     // Return non-zero value to perform C/C++ global data initialization
     return 1;
 }
