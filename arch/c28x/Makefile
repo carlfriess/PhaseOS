@@ -5,6 +5,9 @@ CFLAGS += --output_file=$@
 ARCH_OBJ = boot28.o F2837xD_CodeStartBranch.o F2837xD_usDelay.o boot.o
 ARCH_OBJ := $(patsubst %,$(BUILD_DIR)/arch/c28x/%,$(ARCH_OBJ))
 
+# Include kernel
+include kernel/Makefile
+
 $(BUILD_DIR)/PhaseOS: $(ARCH_OBJ) $(KERNEL_OBJS)
 	@echo " "
 	@echo "Linking target: \033[32m$@\033[39m"

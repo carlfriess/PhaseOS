@@ -6,6 +6,8 @@
 //  Copyright © 2018 Carl Friess. All rights reserved.
 //
 
+#include <kernel.h>
+
 extern void F28x_usDelay(long LoopCount);
 
 #define CPU_RATE   5.00L   // for a 200MHz CPU clock speed (SYSCLKOUT)
@@ -40,6 +42,9 @@ void _system_post_cinit(void)
 // Called at the end of the startup routine when startup is complete.
 void _args_main(void)
 {
+    
+    kernel_start();
+    
     volatile unsigned int *GPADIR = (unsigned int *) 0x00007C0A;
     volatile unsigned int *GPADAT = (unsigned int *) 0x00007F00;
     __asm("    EALLOW");
@@ -49,6 +54,7 @@ void _args_main(void)
         *GPADAT ^= 0x1000;
         DELAY_US(100000);
     }
+    
 }
 
 // Called after _args_main returns.
