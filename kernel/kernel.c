@@ -8,9 +8,17 @@
 
 #include <kernel.h>
 
+#include <serial.h>
+
 void kernel_start()
 {
     
-    __asm("    ESTOP0");
+    serial_init();
+    serial_putchar('H');
+    serial_putchar('e');
+    serial_putchar('l');
+    serial_putchar('l');
+    serial_putchar('o');
+    serial_putchar(serial_getchar());
     
 }

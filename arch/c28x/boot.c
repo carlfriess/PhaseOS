@@ -44,7 +44,7 @@ int _system_pre_init(void)
         GpioCtrlRegs.GPCPUD.all = ~0xE10FBC18;  // GPIOs 67-68, 74-77, 79-83, 93-95
         GpioCtrlRegs.GPDPUD.all = ~0xFFFFFFF7;  // GPIOs 96-127
         GpioCtrlRegs.GPEPUD.all = ~0xFFFFFFFF;  // GPIOs 128-159
-        GpioCtrlRegs.GPFPUD.all = ~0x000001FF;  // GPIOs 160-168();
+        GpioCtrlRegs.GPFPUD.all = ~0x000001FF;  // GPIOs 160-168
         EDIS;
     }
     else {
