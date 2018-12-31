@@ -1,4 +1,5 @@
-CC = /Applications/ti/ccsv7/tools/compiler/ti-cgt-c2000_18.1.0.LTS/bin/cl2000
+AR = /Applications/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.3.LTS/bin/ar2000
+CC = /Applications/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.3.LTS/bin/cl2000
 CFLAGS += -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --fp_mode=relaxed --advice:performance=all -g --diag_warning=225 --diag_wrap=off --display_error_number --emit_warnings_as_errors
 CFLAGS += --output_file=$@
 
