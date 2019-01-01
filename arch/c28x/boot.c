@@ -8,7 +8,7 @@
 
 #include <F2837xD_device.h>
 #include "sys_pll.h"
-#include <kernel.h>
+#include "interrupts.h"
 #include <kernel/kernel.h>
 
 extern void F28x_usDelay(long LoopCount);
@@ -106,6 +106,8 @@ void _system_post_cinit(void)
 // Called at the end of the startup routine when startup is complete.
 void _args_main(void)
 {
+    
+    interrupts_init();
     
     kernel_start();
     

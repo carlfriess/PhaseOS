@@ -6,7 +6,7 @@ CFLAGS += --output_file=$@
 # Add Texas Instruments Support Library to include path
 CFLAGS += -Iarch/c28x/TI_support_library/include -DCPU1
 
-ARCH_OBJ = boot28.o F2837xD_CodeStartBranch.o F2837xD_usDelay.o boot.o sys_pll.o TI_support_library/F2837xD_GlobalVariableDefs.o
+ARCH_OBJ = boot28.o F2837xD_CodeStartBranch.o F2837xD_usDelay.o boot.o sys_pll.o TI_support_library/F2837xD_GlobalVariableDefs.o interrupts.o
 ARCH_OBJ := $(patsubst %,$(BUILD_DIR)/arch/c28x/%,$(ARCH_OBJ))
 
 # Include kernel
