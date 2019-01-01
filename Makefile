@@ -1,10 +1,10 @@
-# Include path
-CFLAGS += -Iinclude
-
 # Determine target architecture
 ifneq (,$(findstring c28x,$(MAKECMDGOALS)))
 ARCH = c28x
 endif
+
+# Include path
+CFLAGS += -Iinclude -Iinclude/arch/$(ARCH)
 
 # Set build directory based on target architecture
 BUILD_DIR = build/$(ARCH)

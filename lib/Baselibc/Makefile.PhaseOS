@@ -1,0 +1,13 @@
+# All source files of the library
+LIBC_SRCFILES = $(wildcard lib/Baselibc/*.c)
+# All object files in the library
+LIBC_OBJFILES = $(patsubst %.c,$(BUILD_DIR)/%.o,$(LIBC_SRCFILES))
+
+LIBC_OBJS := $(BUILD_DIR)/lib/pdclib/libc.a
+
+$(BUILD_DIR)/lib/pdclib/libc.a: $(LIBC_OBJFILES)
+	@echo " "
+	@echo "Archiving: \033[35m$@\033[39m"
+	mkdir -p $(dir $@)
+	$(AR) ru $@ $?
+
