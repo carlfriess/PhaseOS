@@ -6,7 +6,7 @@
 //  Copyright © 2018 Phase. All rights reserved.
 //
 
-#include <kernel.h>
+#include <kernel/kernel.h>
 
 #include <serial.h>
 

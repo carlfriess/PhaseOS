@@ -1,6 +1,6 @@
 //
 //  boot.c
-//  PhaseOS-C28xx
+//  PhaseOS-c28x
 //
 //  Created by Carl Friess on 17/08/2018.
 //  Copyright © 2018 Carl Friess. All rights reserved.
@@ -9,6 +9,7 @@
 #include <F2837xD_device.h>
 #include "sys_pll.h"
 #include <kernel.h>
+#include <kernel/kernel.h>
 
 extern void F28x_usDelay(long LoopCount);
 
