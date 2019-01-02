@@ -9,6 +9,7 @@
 #include <F2837xD_device.h>
 #include "sys_pll.h"
 #include "interrupts.h"
+#include <stdint.h>
 #include <kernel/kernel.h>
 
 extern void F28x_usDelay(long LoopCount);
