@@ -107,9 +107,19 @@ void _system_post_cinit(void)
 void _args_main(void)
 {
     
+    // Detect available system memory (RAMGS)
+    uint16_t i;
+    struct sys_mem_block ramgs = {
+        (void *) 0x00C000,
+        0
+    };
+    for (i = 0; (DevCfgRegs.DC20.all & (1UL << i)) && i <= 31; i++) {
+        ramgs.size += 0x1000;
+    }
+    
     interrupts_init();
     
-    kernel_start();
+    kernel_start(&ramgs, 1);
     
     volatile unsigned int *GPADIR = (unsigned int *) 0x00007C0A;
     volatile unsigned int *GPADAT = (unsigned int *) 0x00007F00;

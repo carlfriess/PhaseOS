@@ -10,7 +10,7 @@
 
 #include <serial.h>
 
-void kernel_start()
+void kernel_start(struct sys_mem_block *mem_blocks, size_t num_mem_blocks)
 {
     
     serial_init();

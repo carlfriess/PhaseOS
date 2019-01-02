@@ -9,6 +9,18 @@
 #ifndef kernel_h
 #define kernel_h
 
-void kernel_start(void);
+#include <stddef.h>
+struct sys_mem_block {
+    void *base;
+    size_t size;
+};
+
+/**
+ *  Called after system has been initialised to hand over control to the kernel.
+ *  @param mem_blocks An array of system memory blocks for the kernel to use and
+ *  allocate to user applications.
+ *  @param num_mem_blocks Length of mem_blocks array.
+ */
+void kernel_start(struct sys_mem_block *mem_blocks, size_t num_mem_blocks);
 
 #endif /* kernel_h */
