@@ -7,8 +7,12 @@
 //
 
 #include <kernel/kernel.h>
+#include <kernel/context.h>
 
 #include <serial.h>
+
+struct context some_context;
+struct context *current_context = &some_context;
 
 void kernel_start(struct sys_mem_block *mem_blocks, size_t num_mem_blocks)
 {
@@ -21,4 +25,8 @@ void kernel_start(struct sys_mem_block *mem_blocks, size_t num_mem_blocks)
     serial_putchar('o');
     serial_putchar(serial_getchar());
     
+}
+
+void kernel_invoke()
+{
 }

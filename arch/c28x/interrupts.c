@@ -11,8 +11,15 @@
 #include <string.h>
 #include <stdint.h>
 #include <F2837xD_device.h>
+#include <kernel/kernel.h>
+#include <kernel/context.h>
 
-static __interrupt void c28x_interrupt(void);
+/**
+ *  Interrupt service routine for user interrupts. Saves the context, invokes
+ *  the kernel, then restores the context.
+ *  @note Written in assembly.
+ */
+extern void c28x_interrupt(void);
 
 void interrupts_init()
 {
@@ -70,11 +77,5 @@ void interrupts_init()
     // Enable Interrupts at the CPU level:
     EINT;
     ERTM;   // Globally enable real-time interrupt DBGM
-
-    
-}
-
-__interrupt void c28x_interrupt()
-{
     
 }

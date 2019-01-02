@@ -10,6 +10,7 @@
 #define kernel_h
 
 #include <stddef.h>
+
 struct sys_mem_block {
     void *base;
     size_t size;
@@ -22,5 +23,10 @@ struct sys_mem_block {
  *  @param num_mem_blocks Length of mem_blocks array.
  */
 void kernel_start(struct sys_mem_block *mem_blocks, size_t num_mem_blocks);
+
+/**
+ *  Kernel invokation: syscall, system tick, trap, etc.
+ */
+void kernel_invoke(void);
 
 #endif /* kernel_h */
